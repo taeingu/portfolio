@@ -28,12 +28,13 @@ const Footer = () => {
       setLoading(false);
       setError(true);
       setErrMessage("All fields must be filled.");
-    } else if (!emailRegex.text(email)) {
+    } else if (!emailRegex.test(email)) {
       setLoading(false);
       setError(true);
       setErrMessage("Enter a valid email address");
     } else {
       setLoading(true);
+      setError(false);
       const contact = {
         _type: "contact",
         name: formData.username,
